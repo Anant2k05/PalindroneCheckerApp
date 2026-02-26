@@ -17,13 +17,18 @@ public class PalindromeCheckerApp {
         Scanner sc = new Scanner(System.in);
         int choice;
 
+        System.out.println("==================================");
+        System.out.println("   Palindrome Checker Application ");
+        System.out.println("   Version 1.0");
+        System.out.println("==================================");
+
         do {
-            System.out.println("\n--- Palindrome Checker Menu ---");
+            System.out.println("\n--- Menu ---");
             System.out.println("1. Check Palindrome");
             System.out.println("2. Exit");
             System.out.print("Enter your choice: ");
             choice = sc.nextInt();
-            sc.nextLine(); // clear buffer
+            sc.nextLine();
 
             switch (choice) {
                 case 1:
@@ -47,6 +52,7 @@ public class PalindromeCheckerApp {
 
         } while (choice != 2);
 
+        System.out.println("Program terminated successfully.");
         sc.close();
     }
 }
