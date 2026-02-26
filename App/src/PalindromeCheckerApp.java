@@ -1,34 +1,52 @@
 import java.util.Scanner;
 
 public class PalindromeCheckerApp {
+
+    public static boolean isPalindrome(String str) {
+        String rev = "";
+
+        for (int i = str.length() - 1; i >= 0; i--) {
+            rev = rev + str.charAt(i);
+        }
+
+        return str.equals(rev);
+    }
+
     public static void main(String[] args) {
 
         Scanner sc = new Scanner(System.in);
-        char choice;
+        int choice;
 
         do {
-            System.out.print("Enter a string: ");
-            String str = sc.nextLine();
+            System.out.println("\n--- Palindrome Checker Menu ---");
+            System.out.println("1. Check Palindrome");
+            System.out.println("2. Exit");
+            System.out.print("Enter your choice: ");
+            choice = sc.nextInt();
+            sc.nextLine(); // clear buffer
 
-            String rev = "";
+            switch (choice) {
+                case 1:
+                    System.out.print("Enter a string: ");
+                    String str = sc.nextLine();
 
-            for (int i = str.length() - 1; i >= 0; i--) {
-                rev = rev + str.charAt(i);
+                    if (isPalindrome(str)) {
+                        System.out.println("Palindrome");
+                    } else {
+                        System.out.println("Not Palindrome");
+                    }
+                    break;
+
+                case 2:
+                    System.out.println("Exiting Program...");
+                    break;
+
+                default:
+                    System.out.println("Invalid choice. Try again.");
             }
 
-            if (str.equals(rev)) {
-                System.out.println("Palindrome");
-            } else {
-                System.out.println("Not Palindrome");
-            }
-
-            System.out.print("Do you want to check another? (y/n): ");
-            choice = sc.next().charAt(0);
-            sc.nextLine(); // consume newline
-
-        } while (choice == 'y' || choice == 'Y');
+        } while (choice != 2);
 
         sc.close();
-        System.out.println("Program Ended");
     }
 }
