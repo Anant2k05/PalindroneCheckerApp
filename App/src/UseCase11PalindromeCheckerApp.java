@@ -8,9 +8,17 @@ class PalindromeChecker {
         int end = str.length() - 1;
 
         while (start < end) {
+<<<<<<< HEAD
             if (str.charAt(start) != str.charAt(end)) {
                 return false;
             }
+=======
+
+            if (str.charAt(start) != str.charAt(end)) {
+                return false;
+            }
+
+>>>>>>> c6bb771e89e46a05f88af0e2db54bea077b9b7cc
             start++;
             end--;
         }
