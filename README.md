@@ -1,4 +1,4 @@
-# PalindroneCheckerApp
+# # PalindromeCheckerApp
 
 ## Objective
 To develop a Palindrome Checker Management System using Java.
